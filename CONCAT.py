@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from numpy.core.defchararray import index
 from numpy.core.fromnumeric import shape
-from SFIT import  SFIT_func
+from SIFT import  SIFT_func
 
 class Concat_Helper:
     def __init__(self):
@@ -26,8 +26,8 @@ class Concat_Helper:
         flann = cv2.FlannBasedMatcher(index_params, search_params)
         img1 = self.gary_images[index1]
         img2 = self.gary_images[index2]
-        kp1, des1=SFIT_func(img2,3)
-        kp2, des2 =SFIT_func(img1,3)
+        kp1, des1=SIFT_func(img2,3)
+        kp2, des2 =SIFT_func(img1,3)
         matches = flann.knnMatch(des1, des2, k=2)
 
         good = []

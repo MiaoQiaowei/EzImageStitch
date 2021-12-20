@@ -459,6 +459,6 @@ def run(image, image_num_per_layer):
     return keypoints, descriptors
 
 
-def SFIT_func(image,layer_num):
+def SIFT_func(image,layer_num):
     return run(image,layer_num)
 

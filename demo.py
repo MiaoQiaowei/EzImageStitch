@@ -1,6 +1,6 @@
 import numpy as np
 import cv2 
-from SFIT import  SFIT_func
+from SIFT import  SIFT_func
 
 from matplotlib import pyplot as plt
 import logging
@@ -11,11 +11,11 @@ MIN_MATCH_COUNT = 10
 img1 = cv2.imread('box.png', 0)           # queryImage
 img2 = cv2.imread('box_in_scene.png', 0)  # trainImage
 
-sfit = SFIT_func
+ift = SIFT_func
 
 # Compute SIFT keypoints and descriptors
-kp1, des1 = sfit(img1,3)
-kp2, des2 = sfit(img2,3)
+kp1, des1 = ift(img1,3)
+kp2, des2 = ift(img2,3)
 # print(kp1)
 # print(kp2)
 # Initialize and use FLANN
