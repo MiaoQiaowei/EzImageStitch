@@ -1,7 +1,5 @@
 import cv2
 import numpy as np
-from numpy.core.defchararray import index
-from numpy.core.fromnumeric import shape
 from SIFT import  SIFT_func
 
 class Concat_Helper:
@@ -62,6 +60,7 @@ class Concat_Helper:
                     warp_img[w_,h_,:] = img1[w_,h_,:]*rate + (1-rate)*warp_img[w_,h_,:]
 
             cv2.imshow('test',warp_img)
+            cv2.imwrite('result.png',warp_img)
             cv2.waitKey()
             exit()
     
@@ -87,5 +86,5 @@ class Concat_Helper:
 
 if __name__ =='__main__':
     concat = Concat_Helper()
-    concat.get_image_list(['11.png','22.png'])
+    concat.get_image_list(['01.png','02.png'])
     concat.run()
